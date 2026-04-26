@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { useCellStore } from '../store/useCellStore';
 
-const WS_URL = import.meta.env.PROD
-  ? `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.host}`
-  : `ws://${window.location.hostname}:3001`;
+const WS_URL = import.meta.env.VITE_WS_URL
+  || (import.meta.env.PROD
+    ? `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.host}`
+    : `ws://${window.location.hostname}:3001`);
 
 export function useWebSocket() {
   const ws = useRef(null);
