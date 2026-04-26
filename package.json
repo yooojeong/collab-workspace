@@ -1,0 +1,14 @@
+{
+  "name": "collab-workspace",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/index.js",
+    "client": "cd client && npm run dev"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "express": "^4.18.2",
+    "ws": "^8.16.0"
+  }
+}
